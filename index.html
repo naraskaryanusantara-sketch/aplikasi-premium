@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BURAQ - Penyedia Aplikasi Editor Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'buraq-pink': '#fc0fb9',
+            'buraq-dark': '#1a0315',
+            'buraq-light': '#fdf2fb',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        .hidden {
+            display: none;
+        }
+        select#service option {
+            background: #1f2937; /* bg-gray-800 */
+            color: white;
+        }
+    </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-buraq-dark font-sans text-white antialiased">
+
+    <!-- Mobile Menu Button -->
+    <button id="sidebar-open-button" type="button" class="fixed top-5 left-5 z-50 md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 bg-gray-900/50 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="sidebar" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+    </button>
+
+    <!-- Sidebar Section -->
+    <aside id="sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen bg-buraq-dark/95 backdrop-blur-sm border-r border-gray-800 p-6 flex flex-col transition-transform duration-300 ease-in-out transform -translate-x-full md:translate-x-0">
+        <div class="flex-shrink-0 mb-10">
+            <a href="#dashboard" class="text-3xl font-black text-buraq-pink tracking-wider">
+              BURAQ
+            </a>
+        </div>
+        
+        <nav class="flex flex-col space-y-4">
+            <a href="#paket" class="text-gray-300 hover:text-buraq-pink transition-colors duration-300 font-semibold text-lg p-2 rounded-md hover:bg-gray-800/50 nav-link">Paket</a>
+            <a href="#testimoni" class="text-gray-300 hover:text-buraq-pink transition-colors duration-300 font-semibold text-lg p-2 rounded-md hover:bg-gray-800/50 nav-link">Testimoni</a>
+            <a href="#kontak" class="text-gray-300 hover:text-buraq-pink transition-colors duration-300 font-semibold text-lg p-2 rounded-md hover:bg-gray-800/50 nav-link">Kontak</a>
+        </nav>
+
+        <a href="#kontak" class="mt-auto bg-buraq-pink text-white font-bold py-3 px-6 rounded-full hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105 w-full text-center nav-link">
+            Pesan Sekarang
+        </a>
+    </aside>
+    
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/60 z-30 md:hidden hidden"></div>
+
+    <div class="md:ml-64">
+        <main>
+            <!-- Hero Section -->
+            <section id="dashboard" class="relative bg-gradient-to-br from-buraq-pink via-purple-800 to-buraq-dark">
+              <div class="container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex items-center justify-center">
+                <div class="text-center">
+                  <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-tight tracking-tight mb-6">
+                    Akses Penuh Aplikasi <span class="block">Editor Premium</span>
+                  </h1>
+                  <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-200 mb-10">
+                    BURAQ menyediakan berbagai aplikasi editor pro untuk menunjang kreativitasmu. Dapatkan versi lengkap dengan semua fitur premium sekarang juga, tanpa ribet.
+                  </p>
+                  <a
+                    href="#paket"
+                    class="inline-block bg-white text-buraq-pink font-bold py-4 px-10 text-lg rounded-full hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-buraq-pink/40 nav-link"
+                  >
+                    Lihat Daftar Aplikasi
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <!-- Packages Section -->
+            <section id="paket" class="py-20 sm:py-28 bg-buraq-dark">
+              <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                  <h2 class="text-3xl sm:text-4xl font-black text-white">Aplikasi Premium Pilihan</h2>
+                  <p class="mt-4 text-lg text-gray-400">
+                    Pilih aplikasi yang Anda butuhkan. Semua aplikasi dijamin pro, full-pack, dan siap pakai untuk project kreatif Anda.
+                  </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                  
+                  <div class="bg-gray-900/50 p-8 rounded-2xl border border-gray-700 hover:border-buraq-pink transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <img src="https://lh3.googleusercontent.com/d/1XN4VeL2omcE8P5m9feHXaY20wfXBdPhg" alt="CapCut Pro Logo" class="h-20 w-20 object-contain mb-6 rounded-lg mx-auto" loading="lazy" decoding="async">
+                    <h3 class="text-xl font-bold text-white mb-3 text-center">CapCut Pro</h3>
+                    <p class="text-gray-400 flex-grow mb-6">Edit video viral dengan template dan fitur canggih tanpa watermark.</p>
+                    <p class="text-2xl font-bold text-buraq-pink mt-auto">Rp 50.000</p>
+                  </div>
+                  
+                  <div class="bg-gray-900/50 p-8 rounded-2xl border border-gray-700 hover:border-buraq-pink transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <img src="https://lh3.googleusercontent.com/d/1vwtlD80NR33Bw594R3aWRbom2JYy7ub0" alt="Alight Motion Pro Logo" class="h-20 w-20 object-contain mb-6 rounded-lg mx-auto" loading="lazy" decoding="async">
+                    <h3 class="text-xl font-bold text-white mb-3 text-center">Alight Motion Pro</h3>
+                    <p class="text-gray-400 flex-grow mb-6">Aplikasi motion graphic profesional untuk animasi berkualitas tinggi di ponsel.</p>
+                    <p class="text-2xl font-bold text-buraq-pink mt-auto">Rp 65.000</p>
+                  </div>
+                  
+                  <div class="bg-gray-900/50 p-8 rounded-2xl border border-gray-700 hover:border-buraq-pink transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <img src="https://lh3.googleusercontent.com/d/1Qxpj0LJnyUljVg56gaBKjHx4ktGdnCQu" alt="Clone App Pro Logo" class="h-20 w-20 object-contain mb-6 rounded-lg mx-auto" loading="lazy" decoding="async">
+                    <h3 class="text-xl font-bold text-white mb-3 text-center">Clone App Pro</h3>
+                    <p class="text-gray-400 flex-grow mb-6">Gandakan aplikasi dan kelola banyak akun sosial media atau game dalam satu perangkat.</p>
+                    <p class="text-2xl font-bold text-buraq-pink mt-auto">Rp 45.000</p>
+                  </div>
+                  
+                  <div class="bg-gray-900/50 p-8 rounded-2xl border border-gray-700 hover:border-buraq-pink transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <img src="https://lh3.googleusercontent.com/d/1zrMT0bAqXJrsbmecV3GG8omUD-IJvC1Q" alt="Filmora Pro Logo" class="h-20 w-20 object-contain mb-6 rounded-lg mx-auto" loading="lazy" decoding="async">
+                    <h3 class="text-xl font-bold text-white mb-3 text-center">Filmora Pro</h3>
+                    <p class="text-gray-400 flex-grow mb-6">Video editor desktop yang powerful dengan ribuan efek dan transisi profesional.</p>
+                    <p class="text-2xl font-bold text-buraq-pink mt-auto">Rp 150.000</p>
+                  </div>
+                  
+                  <div class="bg-gray-900/50 p-8 rounded-2xl border border-gray-700 hover:border-buraq-pink transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <img src="https://lh3.googleusercontent.com/d/1rSKLt3GIR3KcyLXBVWDl8M19D_IgzUW5" alt="KineMaster Pro Logo" class="h-20 w-20 object-contain mb-6 rounded-lg mx-auto" loading="lazy" decoding="async">
+                    <h3 class="text-xl font-bold text-white mb-3 text-center">KineMaster Pro</h3>
+                    <p class="text-gray-400 flex-grow mb-6">Edit video multi-layer dengan mudah di ponsel, didukung aset premium tak terbatas.</p>
+                    <p class="text-2xl font-bold text-buraq-pink mt-auto">Rp 75.000</p>
+                  </div>
+                  
+                  <div class="bg-gray-900/50 p-8 rounded-2xl border border-gray-700 hover:border-buraq-pink transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <img src="https://lh3.googleusercontent.com/d/1Qz_WOa7DlBjeWStW676RNzsJUIXToc55" alt="Lightroom Pro Logo" class="h-20 w-20 object-contain mb-6 rounded-lg mx-auto" loading="lazy" decoding="async">
+                    <h3 class="text-xl font-bold text-white mb-3 text-center">Lightroom Pro</h3>
+                    <p class="text-gray-400 flex-grow mb-6">Edit foto layaknya profesional dengan preset premium dan fitur canggih dari Adobe.</p>
+                    <p class="text-2xl font-bold text-buraq-pink mt-auto">Rp 80.000</p>
+                  </div>
+                  
+                  <div class="bg-gray-900/50 p-8 rounded-2xl border border-gray-700 hover:border-buraq-pink transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <img src="https://lh3.googleusercontent.com/d/1-O_Q1kjAxri1ZlQH20AAFbrzX9cEH63_" alt="Magic Eraser Pro Logo" class="h-20 w-20 object-contain mb-6 rounded-lg mx-auto" loading="lazy" decoding="async">
+                    <h3 class="text-xl font-bold text-white mb-3 text-center">Magic Eraser Pro</h3>
+                    <p class="text-gray-400 flex-grow mb-6">Hapus objek, orang, atau teks yang tidak diinginkan dari foto dengan sekali sentuh.</p>
+                    <p class="text-2xl font-bold text-buraq-pink mt-auto">Rp 40.000</p>
+                  </div>
+                  
+                  <div class="bg-gray-900/50 p-8 rounded-2xl border border-gray-700 hover:border-buraq-pink transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <img src="https://lh3.googleusercontent.com/d/119OtPP3IzQqvNr_cvI_54eoNE5LPiXfy" alt="PicsArt Pro Logo" class="h-20 w-20 object-contain mb-6 rounded-lg mx-auto" loading="lazy" decoding="async">
+                    <h3 class="text-xl font-bold text-white mb-3 text-center">PicsArt Pro</h3>
+                    <p class="text-gray-400 flex-grow mb-6">Semua fitur editing foto, kolase, dan stiker premium terbuka untuk kreativitas tanpa batas.</p>
+                    <p class="text-2xl font-bold text-buraq-pink mt-auto">Rp 70.000</p>
+                  </div>
+                  
+                  <div class="bg-gray-900/50 p-8 rounded-2xl border border-gray-700 hover:border-buraq-pink transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <img src="https://lh3.googleusercontent.com/d/1PmdyNPmHq8-Hi-R9-sauKJ3OKuGw-DOL" alt="TeraBox Pro Logo" class="h-20 w-20 object-contain mb-6 rounded-lg mx-auto" loading="lazy" decoding="async">
+                    <h3 class="text-xl font-bold text-white mb-3 text-center">TeraBox Pro</h3>
+                    <p class="text-gray-400 flex-grow mb-6">Dapatkan ruang penyimpanan cloud raksasa untuk menyimpan semua file penting Anda.</p>
+                    <p class="text-2xl font-bold text-buraq-pink mt-auto">Rp 90.000</p>
+                  </div>
+
+                  <div class="bg-gray-900/50 p-8 rounded-2xl border border-gray-700 hover:border-buraq-pink transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <img src="https://lh3.googleusercontent.com/d/1yjiaeUADF0D3wTTapOsb6NK2eBu3Oloe" alt="VidMate Pro Logo" class="h-20 w-20 object-contain mb-6 rounded-lg mx-auto" loading="lazy" decoding="async">
+                    <h3 class="text-xl font-bold text-white mb-3 text-center">VidMate Pro</h3>
+                    <p class="text-gray-400 flex-grow mb-6">Unduh video dari berbagai platform sosial media dengan kualitas terbaik tanpa iklan.</p>
+                    <p class="text-2xl font-bold text-buraq-pink mt-auto">Rp 35.000</p>
+                  </div>
+                  
+                  <div class="bg-gray-900/50 p-8 rounded-2xl border border-gray-700 hover:border-buraq-pink transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <img src="https://lh3.googleusercontent.com/d/1NZWAeNbtCY-_DzO7P5agBj6e9WPzHMP6" alt="VN Video Editor Pro Logo" class="h-20 w-20 object-contain mb-6 rounded-lg mx-auto" loading="lazy" decoding="async">
+                    <h3 class="text-xl font-bold text-white mb-3 text-center">VN Video Editor Pro</h3>
+                    <p class="text-gray-400 flex-grow mb-6">Editor video intuitif yang cocok untuk pemula hingga profesional, tanpa watermark.</p>
+                    <p class="text-2xl font-bold text-buraq-pink mt-auto">Rp 55.000</p>
+                  </div>
+
+                  <div class="bg-gray-900/50 p-8 rounded-2xl border border-gray-700 hover:border-buraq-pink transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <img src="https://lh3.googleusercontent.com/d/1o2wK8KY7VPBNmB0k12pMVD9SWB6ZI3IS" alt="Canva Pro Logo" class="h-20 w-20 object-contain mb-6 rounded-lg mx-auto" loading="lazy" decoding="async">
+                    <h3 class="text-xl font-bold text-white mb-3 text-center">Canva Pro</h3>
+                    <p class="text-gray-400 flex-grow mb-6">Desain grafis untuk semua kebutuhan, dari media sosial hingga presentasi, dengan aset premium tak terbatas.</p>
+                    <p class="text-2xl font-bold text-buraq-pink mt-auto">Rp 85.000</p>
+                  </div>
+
+                </div>
+              </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section id="testimoni" class="py-20 sm:py-28 bg-gradient-to-br from-purple-900 to-buraq-dark">
+              <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                  <h2 class="text-3xl sm:text-4xl font-black text-white">Apa Kata Para Kreator</h2>
+                  <p class="mt-4 text-lg text-gray-400">
+                    Kepercayaan dan kepuasan pelanggan adalah prioritas utama kami.
+                  </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testimonial Card 1 -->
+                    <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl flex flex-col h-full">
+                        <p class="text-gray-200 text-lg flex-grow">"Akhirnya bisa pakai Alight Motion Pro tanpa pusing. Prosesnya cepet banget, sekarang ngedit jadi lebih asik. Thanks BURAQ!"</p>
+                        <div class="flex items-center mt-6">
+                            <img class="h-14 w-14 rounded-full object-cover" src="https://picsum.photos/id/1005/100/100" alt="Andi Wijaya" loading="lazy" decoding="async" />
+                            <div class="ml-4">
+                                <p class="font-bold text-white">Andi Wijaya</p>
+                                <p class="text-buraq-pink text-sm">Content Creator</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial Card 2 -->
+                    <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl flex flex-col h-full">
+                        <p class="text-gray-200 text-lg flex-grow">"Beli Lightroom Pro di sini gampang banget. Fitur premiumnya kebuka semua, foto-fotoku jadi makin keren. Recommended!"</p>
+                        <div class="flex items-center mt-6">
+                            <img class="h-14 w-14 rounded-full object-cover" src="https://picsum.photos/id/1011/100/100" alt="Rina Setyawati" loading="lazy" decoding="async" />
+                            <div class="ml-4">
+                                <p class="font-bold text-white">Rina Setyawati</p>
+                                <p class="text-buraq-pink text-sm">Photographer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial Card 3 -->
+                    <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl flex flex-col h-full">
+                        <p class="text-gray-200 text-lg flex-grow">"Butuh Filmora Pro buat tugas kuliah, di BURAQ harganya paling pas di kantong. Pelayanannya juga ramah dan fast response."</p>
+                        <div class="flex items-center mt-6">
+                            <img class="h-14 w-14 rounded-full object-cover" src="https://picsum.photos/id/1025/100/100" alt="Budi Santoso" loading="lazy" decoding="async" />
+                            <div class="ml-4">
+                                <p class="font-bold text-white">Budi Santoso</p>
+                                <p class="text-buraq-pink text-sm">Mahasiswa DKV</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="kontak" class="py-20 sm:py-28 bg-buraq-dark">
+              <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                  <h2 class="text-3xl sm:text-4xl font-black text-white">Dapatkan Aplikasimu Sekarang!</h2>
+                  <p class="mt-4 text-lg text-gray-400">
+                    Pilih aplikasi yang Anda inginkan pada form di bawah ini. Tim kami akan segera memproses pesanan Anda.
+                  </p>
+                </div>
+        
+                <div class="max-w-4xl mx-auto bg-gray-900/50 p-8 sm:p-12 rounded-2xl border border-gray-700">
+                  <form id="contact-form" action="#" method="POST">
+                    <div class="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
+                      <div>
+                        <label for="full-name" class="block text-sm font-semibold leading-6 text-gray-300">Nama Lengkap</label>
+                        <div class="mt-2.5">
+                          <input type="text" name="full-name" id="full-name" autocomplete="name" required class="block w-full rounded-md border-0 bg-white/5 py-2 px-3.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-buraq-pink sm:text-sm sm:leading-6" />
+                        </div>
+                      </div>
+                      <div>
+                        <label for="phone-number" class="block text-sm font-semibold leading-6 text-gray-300">Nomor Telepon</label>
+                        <div class="mt-2.5">
+                          <input type="tel" name="phone-number" id="phone-number" autocomplete="tel" required class="block w-full rounded-md border-0 bg-white/5 py-2 px-3.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-buraq-pink sm:text-sm sm:leading-6" />
+                        </div>
+                      </div>
+                      <div class="sm:col-span-2">
+                        <label for="email" class="block text-sm font-semibold leading-6 text-gray-300">Email</label>
+                        <div class="mt-2.5">
+                          <input type="email" name="email" id="email" autocomplete="email" required class="block w-full rounded-md border-0 bg-white/5 py-2 px-3.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-buraq-pink sm:text-sm sm:leading-6" />
+                        </div>
+                      </div>
+                      <div class="sm:col-span-2">
+                        <label for="service" class="block text-sm font-semibold leading-6 text-gray-300">Aplikasi yang diminati</label>
+                        <div class="mt-2.5">
+                          <select id="service" name="service" class="block w-full rounded-md border-0 bg-white/5 py-2 px-3.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-buraq-pink sm:text-sm sm:leading-6">
+                            <option>CapCut Pro</option>
+                            <option>Alight Motion Pro</option>
+                            <option>Canva Pro</option>
+                            <option>Clone App Pro</option>
+                            <option>Filmora Pro</option>
+                            <option>KineMaster Pro</option>
+                            <option>Lightroom Pro</option>
+                            <option>Magic Eraser Pro</option>
+                            <option>PicsArt Pro</option>
+                            <option>TeraBox Pro</option>
+                            <option>VidMate Pro</option>
+                            <option>VN Video Editor Pro</option>
+                            <option>Lainnya</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="sm:col-span-2">
+                        <label for="message" class="block text-sm font-semibold leading-6 text-gray-300">Pesan (Opsional)</label>
+                        <div class="mt-2.5">
+                          <textarea name="message" id="message" rows="4" class="block w-full rounded-md border-0 bg-white/5 py-2 px-3.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-buraq-pink sm:text-sm sm:leading-6"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-10">
+                      <button type="submit" class="block w-full rounded-md bg-buraq-pink px-3.5 py-3 text-center text-sm font-semibold text-white shadow-sm hover:bg-opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-buraq-pink transition-all duration-300">Pesan via WhatsApp</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </section>
+
+        </main>
+        
+        <!-- Footer Section -->
+        <footer class="bg-buraq-dark border-t border-gray-800">
+          <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-400 text-sm">
+              &copy; <span id="current-year"></span> BURAQ. All rights reserved.
+            </p>
+          </div>
+        </footer>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // JavaScript for Mobile Sidebar Toggle
+        const sidebar = document.getElementById('sidebar');
+        const openButton = document.getElementById('sidebar-open-button');
+        const overlay = document.getElementById('sidebar-overlay');
+        const allNavLinks = document.querySelectorAll('.nav-link');
+
+        const openSidebar = () => {
+          sidebar.classList.remove('-translate-x-full');
+          overlay.classList.remove('hidden');
+          openButton.setAttribute('aria-expanded', 'true');
+        };
+
+        const closeSidebar = () => {
+          sidebar.classList.add('-translate-x-full');
+          overlay.classList.add('hidden');
+          openButton.setAttribute('aria-expanded', 'false');
+        };
+
+        openButton.addEventListener('click', openSidebar);
+        overlay.addEventListener('click', closeSidebar);
+        
+        // JavaScript for Smooth Scrolling and closing sidebar on mobile
+        allNavLinks.forEach(link => {
+          link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            // Only prevent default for internal links
+            if (href && href.startsWith('#')) {
+              e.preventDefault();
+              const targetElement = document.querySelector(href);
+
+              if (targetElement) {
+                targetElement.scrollIntoView({
+                  behavior: 'smooth'
+                });
+              }
+              
+              // Close sidebar on mobile if a nav link is clicked
+              if (window.innerWidth < 768) {
+                closeSidebar();
+              }
+            }
+          });
+        });
+
+        // JavaScript for dynamic year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // JavaScript for WhatsApp Form Submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', function(event) {
+          event.preventDefault();
+
+          const name = document.getElementById('full-name').value;
+          const phone = document.getElementById('phone-number').value;
+          const email = document.getElementById('email').value;
+          const service = document.getElementById('service').value;
+          const message = document.getElementById('message').value;
+
+          const whatsAppNumber = '628563231191'; // Ganti 08... dengan 628...
+
+          let formattedMessage = `Halo BURAQ,
+
+Saya tertarik untuk membeli aplikasi premium.
+Berikut adalah detail saya:
+
+*Nama Lengkap:* ${name}
+*Nomor Telepon:* ${phone}
+*Email:* ${email}
+*Aplikasi yang diminati:* ${service}`;
+
+          if (message.trim() !== '') {
+            formattedMessage += `
+
+*Pesan Tambahan:*
+${message}`;
+          }
+
+          const encodedMessage = encodeURIComponent(formattedMessage);
+          const whatsappUrl = `https://wa.me/${whatsAppNumber}?text=${encodedMessage}`;
+
+          window.open(whatsappUrl, '_blank');
+        });
+      });
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
